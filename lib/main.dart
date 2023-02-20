@@ -5,6 +5,10 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
+  void answerQuestion() {
+    print("Answer chosen!");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,9 +18,12 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(children: <Widget>[
           Text("The question:"),
-          ElevatedButton(onPressed: null, child: Text("Answer 1")),
-          ElevatedButton(onPressed: null, child: Text("Answer 2")),
-          ElevatedButton(onPressed: null, child: Text("Answer 3")),
+          // Pass pointer of answerQuestion not answerQuestion() as that will
+          // excecute the function when passed instead of waiting for button to
+          // be pressed. In short, dont use (), just use the name.
+          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 1")),
+          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 2")),
+          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 3")),
         ]),
       ),
     );
