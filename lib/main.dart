@@ -5,16 +5,16 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
   }
 
@@ -30,13 +30,13 @@ class MyAppState extends State<MyApp> {
           title: Text("Quiz App"),
         ),
         body: Column(children: <Widget>[
-          Text(questions[questionIndex]),
+          Text(questions[_questionIndex]),
           // Pass pointer of answerQuestion not answerQuestion() as that will
           // excecute the function when passed instead of waiting for button to
           // be pressed. In short, dont use (), just use the name.
-          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 1")),
-          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 2")),
-          ElevatedButton(onPressed: answerQuestion, child: Text("Answer 3")),
+          ElevatedButton(onPressed: _answerQuestion, child: Text("Answer 1")),
+          ElevatedButton(onPressed: _answerQuestion, child: Text("Answer 2")),
+          ElevatedButton(onPressed: _answerQuestion, child: Text("Answer 3")),
         ]),
       ),
     );
