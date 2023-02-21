@@ -1,4 +1,8 @@
+// Packages:
 import 'package:flutter/material.dart';
+
+// Files:
+import './question.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +34,7 @@ class _MyAppState extends State<MyApp> {
           title: Text("Quiz App"),
         ),
         body: Column(children: <Widget>[
-          Text(questions[_questionIndex]),
+          Question(questions[_questionIndex]),
           // Pass pointer of answerQuestion not answerQuestion() as that will
           // excecute the function when passed instead of waiting for button to
           // be pressed. In short, dont use (), just use the name.
