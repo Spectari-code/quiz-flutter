@@ -1,10 +1,9 @@
 // Packages:
 import 'package:flutter/material.dart';
-import 'package:quiz/answer.dart';
 
 // Files:
 import './question.dart';
-import './question.dart';
+import './answer.dart';
 
 void main() => runApp(MyApp());
 
@@ -37,9 +36,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(children: <Widget>[
           Question(questions[_questionIndex]),
-          Answer(),
-          Answer(),
-          Answer(),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
+          Answer(_answerQuestion),
         ]),
       ),
     );
