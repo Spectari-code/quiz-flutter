@@ -1,8 +1,3 @@
-import 'package:quiz/result.dart';
-import 'package:quiz/result.dart';
-import 'package:quiz/result.dart';
-import 'package:quiz/result.dart';
-import 'package:quiz/result.dart';
 // Packages:
 import 'package:flutter/material.dart';
 
