@@ -5,8 +5,9 @@ class Answer extends StatelessWidget {
   // Use VoicCallback (as the function returns nothing) instead of Function
   // if errors.
   final Function selectHandler;
+  final String textAnswer;
 
-  Answer(this.selectHandler);
+  Answer(this.selectHandler, this.textAnswer);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Answer extends StatelessWidget {
           backgroundColor: Colors.blue,
           padding: EdgeInsets.only(top: 5),
         ),
-        child: Text("answer"),
+        child: Text(textAnswer),
         onPressed: selectHandler,
       ),
     );
