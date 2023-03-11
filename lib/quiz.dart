@@ -17,13 +17,18 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      Question(questions[questionIndex]['questionText']), // access by key
-      // map List into a List of Widgets, spread them so we pass individual
-      //  widgets to column to make it happy
-      ...(questions[questionIndex]['answers'] as List<String>)
-          .map((answers) => Answer(answerQuestion, answers))
-          .toList()
-    ]);
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Question(questions[questionIndex]['questionText']
+              as String), // access by key
+          // map List into a List of Widgets, spread them so we pass individual
+          //  widgets to column to make it happy
+          ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
+              .map((answers) => Answer(() => answerQuestion(answers['score']),
+                  answers['text'] as String))
+              .toList()
+        ]);
   }
 }
